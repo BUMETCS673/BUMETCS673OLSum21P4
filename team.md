@@ -3,7 +3,9 @@ Student : But Wing Han Josephine,
 
 
 Class : METCS673
+
 Team : 4 
+
 Git Name : BUMETCS673OLSUM21P4
 
 ##Introduce yourself
