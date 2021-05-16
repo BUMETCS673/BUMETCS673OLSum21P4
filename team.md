@@ -25,3 +25,6 @@ Hi everyone! My name is Huimin Diao, I come from China 🇨🇳. This is my last
 
 ## Name: Danny Graziano
 Hi Team! I'm Danny Graziano, and I live in the Boston area now, but I'm originally from NY.  I used to work in a neuroscience lab, but now I working as a data scientists at a small biotech company in the area.  I have a few more courses before I finish my masters degree, but I'm excited at the opportunity to learn and work with all of you and build something cool in the process!   https://github.com/GauntPigeon 
+
+## Name: Zixia Zhou
+Hi everyone! My name is Zixia Zhou and I'm from CHINA, this is my second semester in CS major. I live in new york city with my girlfriend:). Since my undergraduate degree is in finance and management, I am not professional in CS, but I will try my best to finish my part on time. It's a pleasure to learn with all of you in this class! My Github link is https://github.com/zzxBU
