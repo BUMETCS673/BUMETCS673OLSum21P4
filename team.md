@@ -28,3 +28,6 @@ Hi Team! I'm Danny Graziano, and I live in the Boston area now, but I'm original
 
 ## Name: Zixia Zhou
 Hi everyone! My name is Zixia Zhou and I'm from CHINA, this is my second semester in CS major. I live in new york city with my girlfriend:). Since my undergraduate degree is in finance and management, I am not professional in CS, but I will try my best to finish my part on time. It's a pleasure to learn with all of you in this class! My Github link is https://github.com/zzxBU
+
+## Name: Chen Zhao
+Hi Team! I am Chen Zhao and I live in China now, my time zone is GMT+8 and I am interesting in Machine Learning and reinforcement learning. I don't have experience with company project so it seems there are lots of new things should learn:) I am looking forward to make an interesting project with you! And my github link is: https://github.com/FreiheitalsAutonomie
