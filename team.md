@@ -22,3 +22,6 @@ Security Leader: Zixia Zhou<br>
 
 ## Name: Huimin Diao
 Hi everyone! My name is Huimin Diao, I come from China 🇨🇳. This is my last semester in BU, I major in CS and focus on Data Analysis and pretty interesting to Artifical Intelligence. Since I am full-time student, I haven’t done a company project before, but I hope I can do something for our team. It is nice to see you guys. My GitHub is https://github.com/lazyDhm
+
+## Name: Danny Graziano
+Hi Team! I'm Danny Graziano, and I live in the Boston area now, but I'm originally from NY.  I used to work in a neuroscience lab, but now I working as a data scientists at a small biotech company in the area.  I have a few more courses before I finish my masters degree, but I'm excited at the opportunity to learn and work with all of you and build something cool in the process!   https://github.com/GauntPigeon 
