@@ -12,3 +12,5 @@ We plan to build two main functions about our web application project.
 *Since this is draft version, maybe we will update our project's function.*
 
 ## Technology & Tools:
+- Language: Python
+- Framework: Flask
