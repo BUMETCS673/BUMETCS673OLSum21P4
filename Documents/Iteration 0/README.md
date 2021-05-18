@@ -1,7 +1,8 @@
 # CS673OLSum21P4 Iteration 0
 
 ## Project Description:
-In our project, we plan to build a web about **Calorie Tracker**. This application will help user to calculate their daily food's calorie is overweight or not, and if user want to build fitness meal and input their body data, our application will give some food recommendations or suggest upper limit of user's daily calories.
+In our project, we plan to build a web about **Calorie Tracker**. This application will help user to calculate their daily food's calorie is overweight or not, and if user want to build fitness meal and input their body data, our application will give some food recommendations or suggest upper limit of user's daily calories.<br>
+*We put our presentation link in SPPP file.*
 
 
 ## Project Main Functions:
