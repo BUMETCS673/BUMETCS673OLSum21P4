@@ -1,0 +1,72 @@
+
+           .fnameTextbox {
+                float: left;
+                padding: 10px 20px;
+                background-color: #a9a9a9;
+                text-color: #000000;
+                border: 1px solid #236B8E;
+                border-radius: 10px;
+            }
+
+            .lnameTextbox {
+                float: right;
+                padding: 10px 20px;
+                background-color: #a9a9a9;
+                text-color: #000000;
+                border: 1px solid #236B8E;
+                border-radius: 10px;
+            }
+
+
+           .header{
+                padding: 5px 120px;
+                width: 150px;
+                height: 70px;
+                background-color: #a9a9a9;
+            }
+
+            .border{
+                padding: 80px 50px;
+                width: 400px;
+                height: 450px;
+                border: 1px solid #236B8E;
+                border-radius: 0px;
+                background-color:#87cefa
+            }
+
+            .btn {
+                padding: 10px 40px;
+                background-color: #a9a9a9;
+                color: #696969;
+                font-style: oblique;
+                font-weight: bold;
+                border: 2px solid #236B8E;
+                border-radius: 10px;
+            }
+
+            .textbox{
+                padding: 10px 40px;
+                background-color: #a9a9a9;
+                text-color: #000000;
+                border: 1px solid #236B8E;
+                border-radius: 10px;
+            }
+
+            ::placeholder {
+                color: #ffffff;
+                opacity: 1;
+                font-style: oblique;
+                font-weight: bold;
+            }
+
+            .word{
+                color: #ffffff;
+                font-style: oblique;
+                font-weight: bold;
+            }
+
+            .bottom{
+                color: #6495ED;
+                font-style: oblique;
+                font-weight: bold;
+            }
