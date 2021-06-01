@@ -20,7 +20,7 @@ In our project, we plan to build a web about **Calorie Tracker**. This applicati
 
 # Web Page Preview
 - Landing page
-![Landing Page!](/images/landing_page_draft.png)
+![Landing Page!](/BUMETCS673OLSum21P4/images/landing_page_draft.png)
 
 - Rigster/Login
 
