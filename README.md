@@ -17,4 +17,9 @@ Institution: [Boston University's Metropolitan College](https://www.bu.edu/met/)
 ## How to use
 
 ## Technical Requirement List
+[Python](https://www.python.org/)<br>
+[flask](https://palletsprojects.com/p/flask/)<br>
+[JavaScript](https://www.javascript.com/)<br>
+[HTML/CSS]
+
 
