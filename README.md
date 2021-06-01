@@ -2,9 +2,10 @@
 # BUMETCS673OLSum21P4
 
 # Project Information
-## Team: 4 
-## Instructor: Yuting Zhang<br>
-## Team Members: 
+## Project Name: DietHub
+*Logo will displayed in here*
+## Team Four Members: 
+Instructor: Yuting Zhang<br>
 Team Leader: Ray Clark<br>
 Requirement Leader: Chen Zhao<br>
 Design and Implementation Leader: Daniel Graziano<br>
@@ -15,14 +16,27 @@ Institution: [Boston University's Metropolitan College](https://www.bu.edu/met/)
 
 ## Project Description:
 In our project, we plan to build a web about **Calorie Tracker**. This application will help user to calculate their daily food's calorie is overweight or not, and if user want to build fitness meal and input their body data, our application will give some food recommendations or suggest upper limit of user's daily calories.<br>
-*see more details, plz look at Documents folder, the our presentation link in SPPP file.*
+*see more details, plz look at Documents folder, the presentation link in SPPP file.*
 
-## How to use
+# Web Page Preview
+- Landing page
+![Landing Page!](/images/landing_page_draft.png)
+*draft version*
+
+- Rigster/Login
+
+
+## Project Functions:
+We plan to build two main functions about our web application project.
+- To let the user enter the food type and food weight, the application will return the calories of the food and the total calories of the meal, then application will display a warning or suggestion if the total calories is over.
+- To let the user enter the age, weight and height and the application will calculate the BMI, then according to the BMI, the application will recommend some food or amount of calories the user can take.<br>
+
+*Since this is draft version, maybe we will update our project's function.*
 
 ## Technical Requirement List
-[Python](https://www.python.org/)<br>
-[flask](https://palletsprojects.com/p/flask/)<br>
-[JavaScript](https://www.javascript.com/)<br>
-[HTML/CSS]
+- [Python](https://www.python.org/)<br>
+- [flask](https://palletsprojects.com/p/flask/)<br>
+- [JavaScript](https://www.javascript.com/)<br>
+- HTML/CSS
 
 
