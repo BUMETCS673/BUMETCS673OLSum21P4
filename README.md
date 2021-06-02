@@ -19,10 +19,15 @@ In our project, we plan to build a web about **Calorie Tracker**. This applicati
 *see more details, plz look at Documents folder, the presentation link in SPPP file.*
 
 # Web Page Preview
-- Landing page
-![Landing Page!](/BUMETCS673OLSum21P4/images/landing_page_draft.png)
+- Landing Page
+![Landing Page!](images/landingpage_draft.png)
 
 - Rigster/Login
+
+- Main Page
+
+- User Profile
+
 
 
 ## Project Functions:
