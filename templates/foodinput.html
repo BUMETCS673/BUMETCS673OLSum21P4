@@ -24,7 +24,7 @@
     <input class='button' type="submit" value="Submit">
   </form>
   {% if message != '' %}
-    <p>{message}</p>
+    <p>{{ message }}</p>
   {% endif %}
   <form method="get" action="/foodtable">
     <button class='button' type="submit">View Meals</button>

@@ -22,9 +22,6 @@ with app.app_context():
 
                 self.assertEqual(app.debug, False)
 
-        def tearDown(self):
-            pass
-
         def test_home_page_route(self):
             response = self.app.get('/', follow_redirects=True)
             self.assertEqual(response.status_code, 200)
@@ -32,6 +29,7 @@ with app.app_context():
         def test_about_page_route(self):
             response = self.app.get('/about', follow_redirects=True)
             self.assertEqual(response.status_code, 200)
+            
         def test_food_input_route(self):
             response = self.app.get('/foodinput', follow_redirects=True)
             self.assertEqual(response.status_code, 200)
@@ -42,13 +40,8 @@ with app.app_context():
 
         def test_add_meal(self):
             response = self.app.post('/foodinput', data=dict(meal_type="lunch", fitem1='Berries', fitem2='Curry' ), follow_redirects=True)
-            print('RESPONSE', response)
             self.assertTrue(b'Meal Added' in response.data)
     
-
-
-
-
 
 if __name__ == '__main__':
     unittest.main()

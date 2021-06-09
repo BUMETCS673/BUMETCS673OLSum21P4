@@ -17,6 +17,7 @@ def about():
 def foodinput():
     #get the data from the form
     if request.method == 'POST':
+        # print("REQUEST", request.data)
         meal_type = request.form['meal_type']
         food_item1 = request.form['fitem1']
         food_item2 = request.form['fitem2']
@@ -28,10 +29,10 @@ def foodinput():
         try:
             db.session.add(new_meal)
             db.session.commit()
-            return redirect('/foodinput', message="Meal Added")
+            return render_template('foodinput.html', message="Meal Added")
 
         except:
-          return "There was an issue adding your meal details"
+          return render_template('foodinput.html', message="There was an issue adding your meal details")
 
     else:
       meals = MealModel.query.order_by(MealModel.date_created).all()
