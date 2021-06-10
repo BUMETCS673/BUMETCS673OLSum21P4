@@ -32,13 +32,15 @@ def login():
 
     if request.method == 'POST':
         username = request.form['username']
-        user = UserModel.query.filter_by (username=username).first ( )
-        if user is not None and user.check_password (request.form['password']):
-            login_user (user)
-            return redirect ('/index')
+        password = request.form['password']
+        user=UserModel(username=username, password=password )
+        user = user.check_username_exist(username)
+        if user is not None and user.check_password(password):
+            login_user(user)
+            return redirect('/index')
         else:
             msg = 'Incorrect username/password!'
-    return render_template ('login.html', msg=msg)
+    return render_template('login.html', msg=msg)
 
 
 @app.route ('/register', methods=['POST', 'GET'])
@@ -53,21 +55,19 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
-        if UserModel.query.filter_by (username=username).first ( ):
-                msg = 'Username is already exist'
-                return render_template('register.html', msg=msg)
+        user=UserModel(firstname=firstname, lastname=lastname,email=email, username=username)
+        if user.check_username_exist(username):
+            msg = 'Username is already exist'
+            return render_template('register.html', msg=msg)
 
-        if UserModel.query.filter_by (email=email).first ( ):
-                msg = 'Email is already exist'
-                return render_template('register.html', msg=msg)
+        if user.check_email_exist(email):
+            msg = 'Email is already exist'
+            return render_template('register.html', msg=msg)
 
-        user = UserModel(firstname=firstname, lastname=lastname,email=email, username=username)
         user.set_password(password)
-        db.session.add(user)
-        db.session.commit( )
-        return redirect ('/login')
+        if user.add_user(user, app):
+            return redirect ('/login')
     return render_template ('register.html')
-
 
 @app.route ('/logout')
 def logout():
