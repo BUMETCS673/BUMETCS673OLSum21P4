@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head%}
+
+ <title>Retrieve User Information</title>
+
+{% endblock%}
+
+{% block body%}
+
+<h1>User Details</h1>
+
+<h3>Please enter the username below:</h3>
+<div class="userform">
+  <form action="" method = 'POST'>
+    <label for="Username : ">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    <button class='button' type="submit">Retrieve User</button>
+  </form>
+</div>
+{% endblock%}
+

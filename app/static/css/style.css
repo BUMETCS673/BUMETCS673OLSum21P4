@@ -1,4 +1,3 @@
-
            .fnameTextbox {
                 float: left;
                 padding: 10px 20px;
@@ -20,7 +19,7 @@
            .header{
                 padding: 5px 120px;
                 width: 150px;
-                height: 50px;
+                height: 70px;
                 background-color: #a9a9a9;
             }
 
@@ -34,8 +33,8 @@
             }
 
             .btn {
+                background-color: #1E90FF;
                 padding: 10px 40px;
-                background-color: #a9a9a9;
                 color: #696969;
                 font-style: oblique;
                 font-weight: bold;
