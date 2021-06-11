@@ -98,55 +98,66 @@ def logout():
     return redirect('/')
 
 
-@app.route('/admin/data/', methods=['GET', 'POST'])
+@app.route('/admin/data', methods=['GET', 'POST'])
 @login_required
 def get_user_data():
-    if request.method == 'GET':
-        return render_template('userinput.html')
+    if user.check_admin(current_user.username):
+        if request.method == 'GET':
+            return render_template('userinput.html')
 
-    if request.method == 'POST':
-        username = request.form['username']
-        return redirect(f'/admin/data/{username}')
+        if request.method == 'POST':
+            username = request.form['username']
+            return redirect(f'/admin/data/{username}')
+    else:
+        return redirect('/')
 
 
 @app.route('/admin/data/<string:username>', methods=['GET', 'POST'])
 @login_required
 def display_user_detail(username):
-    user1 = (Admin(user)).retrieve_user(username)
-    if user1:
-        return render_template('userlist.html', user=user1)
+    if user.check_admin(current_user.username):
+        user1 = (Admin(user)).retrieve_user(username)
+        if user1:
+            return render_template('userlist.html', user=user1)
+        else:
+            return redirect(f'/admin/data')
     else:
-        return redirect(f'/admin/data/')
+        return redirect('/')
 
 
 @app.route('/admin/data/update/<int:id>', methods=['GET', 'POST'])
 @login_required
 def update_user_record(id):
-    user = UserModel.query.get_or_404(id)
-    if request.method == 'POST':
-        user.firstname = request.form['firstname']
-        user.lastname = request.form['lastname']
-        user.username = request.form['username']
-        user.password = request.form['password']
-        user.password = user.set_password(user.password)
-        user.email = request.form['email']
-
-        try:
-            db.session.commit()
-            return redirect(f'/admin/data/{user.username}')
-        except:
-            return "Problem to updating the user record."
+    if user.check_admin(current_user.username):
+        user1 = UserModel.query.get_or_404(id)
+        if request.method == 'POST':
+            user1.firstname = request.form['firstname']
+            user1.lastname = request.form['lastname']
+            user1.username = request.form['username']
+            user1.password = request.form['password']
+            user1.password = user.set_password(user1.password)
+            user1.email = request.form['email']
+            try:
+                db.session.commit()
+                return redirect(f'/admin/data/{user1.username}')
+            except exc.SQLAlchemyError:
+                return "Problem to updating the user record."
+        else:
+            return render_template('userupdate.html', user=user1)
     else:
-        return render_template('userupdate.html', user=user)
+        redirect('/')
 
 
 @app.route('/admin/data/delete/<int:id>', methods=['GET', 'POST'])
 @login_required
 def delete_user_record(id):
-    if (Admin(user)).delete_user(id):
-        return redirect('/admin/data')
+    if user.check_admin(current_user.username):
+        if (Admin(user)).delete_user(id):
+            return redirect('/admin/data')
+        else:
+            return "Problem to deleting the user record."
     else:
-        return "Problem to deleting the user record."
+        redirect('/')
 
 
 # route to CREATE a meal entry

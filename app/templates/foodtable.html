@@ -22,7 +22,6 @@
   <table class="table1">
     <h2>The action links will allow you to delete or update a meal</h2>
     <tr>
-      <th>Meal ID</th>
       <th>Meal Type</th>
       <th>Food Items</th>
       <th>Added</th>
@@ -31,7 +30,6 @@
     </tr>
   {% for meal in meals %}
     <tr>
-      <td> {{ meal.id }}</td>
       <td> {{ meal.meal_type }}</td>
       <td> {{ meal.food_item1 }}, {{ meal.food_item2 }}</td>
       <td> {{ meal.date_created.strftime("%m/%d/%Y") }}</td>
