@@ -24,3 +24,9 @@ typing-extensions==3.10.0.0
 virtualenv==20.4.6
 Werkzeug==2.0.1
 zipp==3.4.1
+
+requests~=2.24.0
+pyyaml~=5.4.1
+pathlib~=1.0.1
+pyprojroot~=0.2.0
+pytest~=6.2.4

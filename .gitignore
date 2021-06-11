@@ -2,7 +2,7 @@
 env/*
 .vscode/*
 *.db
-
+.idea/*
 
 
 # Distribution / packaging
