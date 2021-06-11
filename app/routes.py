@@ -1,39 +1,36 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_login import login_required, current_user, login_user, logout_user
 from models import UserModel, db, login, Admin
+from app import *
 
-app = Flask(__name__)
-app.secret_key = 'xf7\xc4\xfa\x91'
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../database/data.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db.init_app(app)
+# db.init_app(app)
 login.init_app(app)
 login.login_view = 'login'
 
-user = UserModel()
-admin = Admin()
 
-
-@app.before_first_request
-def create_all():
-    db.create_all()
-    admin.add_admin_user('John', 'Boyle', 'admin1@123.com', 'admin1', 'admin1')
-    admin.add_admin_user('Stephen', 'Best', 'admin2@123.com', 'admin2', 'admin2')
-
-
-@app.route('/index')
-@login_required
-def index():
+# route for Home Page
+@app.route("/")  # home page route
+def home():
     return render_template('index.html')
+
+
+# route for About page
+@app.route('/about')  # render about page
+def about():
+    return render_template('about.html')
+
+
+@app.route('/foodinput')
+@login_required
+def user_dashboard():
+    return render_template('foodinput.html')
 
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     msg = ''
     if current_user.is_authenticated:
-        return redirect('/index')
+        return redirect('/foodinput')
 
     if request.method == 'POST':
         username = request.form['username']
@@ -42,9 +39,9 @@ def login():
         if user is not None:
             if user.role == 'customer':
                 user = UserModel(user.firstname, user.lastname, user.email,
-                                user.username, user.password, user.role)
+                                 user.username, user.password, user.role)
 
-                path = '/index'
+                path = '/foodinput'
             else:
                 user = Admin(user.firstname, user.lastname, user.email,
                              user.username, user.password, user.role)
@@ -76,7 +73,7 @@ def register():
         password = request.form['password']
 
         customer = UserModel(firstname, lastname, email,
-                            username, password, role)
+                             username, password, role)
         if customer.check_username_exist(username):
             msg = 'Username is already exist'
             return render_template('register.html', msg=msg)
@@ -98,7 +95,7 @@ def register():
 @login_required
 def logout():
     logout_user()
-    return redirect('/index')
+    return redirect('/')
 
 
 @app.route('/admin/data/', methods=['GET', 'POST'])
@@ -152,3 +149,77 @@ def delete_user_record(id):
         return "Problem to deleting the user record."
 
 
+# route to CREATE a meal entry
+@app.route('/foodinput', methods=['POST', 'GET'])  # render food input page
+@login_required
+def foodinput():
+    # get the data from the form
+    if request.method == 'POST':
+        # print("REQUEST", request.data)
+        meal_type = request.form['meal_type']
+        food_item1 = request.form['fitem1']
+        food_item2 = request.form['fitem2']
+
+        # use the received data to instantiate a Meal object
+        new_meal = MealModel(meal_type=meal_type, food_item1=food_item1, food_item2=food_item2)
+
+        # push the data to the sqlite db
+        try:
+            db.session.add(new_meal)
+            db.session.commit()
+            return render_template('foodinput.html', message="Meal Added")
+
+        except:
+            return render_template('foodinput.html', message="There was an issue adding your meal details")
+
+    else:
+        meals = MealModel.query.order_by(MealModel.date_created).all()
+        return render_template('foodinput.html', message="")
+
+
+@app.route('/foodtable', methods=['GET'])  # render food table page
+@login_required
+def foodtable():
+    # get the data from the form
+    try:
+        meals = MealModel.query.order_by(MealModel.date_created).all()
+        return render_template('foodtable.html', meals=meals)
+    except:
+        return "There was an issue displaying your meals"
+
+
+# route to DELETE a meal entry
+@app.route('/delete/<int:id>')
+@login_required
+def delete_meal(id):
+    delete_meal = MealModel.query.get_or_404(id)
+
+    try:
+        db.session.delete(delete_meal)
+        db.session.commit()
+        return redirect('/foodtable')
+
+    except:
+        return "There was an issue deleting your meal"
+
+
+# route to UPDATE a meal entry
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+@login_required
+def update_meal(id):
+    meal = MealModel.query.get_or_404(id)
+
+    if request.method == 'POST':
+        meal.meal_type = request.form['meal_type']
+        meal.food_item1 = request.form['fitem1']
+        meal.food_item2 = request.form['fitem2']
+
+        try:
+            db.session.commit()
+            return redirect('/foodtable')
+
+        except:
+            return "There was an issue updating your meal"
+
+    else:
+        return render_template('update.html', meal=meal)

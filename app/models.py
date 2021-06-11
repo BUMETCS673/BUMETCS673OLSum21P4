@@ -3,6 +3,7 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager
 from sqlalchemy import exc
+from datetime import datetime
 
 login = LoginManager()
 db = SQLAlchemy()
@@ -57,6 +58,16 @@ class UserModel(UserMixin, db.Model):
         else:
             return False
 
+class MealModel(db.Model):
+  __bind_key__ = 'two'
+  __tablename__ = 'meals'
+
+  id = db.Column(db.Integer, primary_key=True)
+  meal_type = db.Column(db.String(200), nullable=False)
+  food_item1 = db.Column(db.String(200), nullable=False)
+  food_item2 = db.Column(db.String(200), nullable=False)
+  date_created = db.Column(db.DateTime, default=datetime.utcnow)
+
 
 @login.user_loader
 def load_user(id):
@@ -94,3 +105,4 @@ class Admin(UserModel):
         else:
             db.session.commit()
             return True
+

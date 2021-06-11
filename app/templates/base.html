@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
   <!--Horizontal Navigation Bar Here-->
   <div class="hero-banner">
@@ -24,15 +25,6 @@
       <div class="overlay"></div>
     </div>
   </div>
-  <nav id="navbar">
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="about">About</a></li>
-      <li><a href="foodinput">Create Meal</a></li>
-      <li><a href="foodtable">View Meals</a></li>
-    </ul>
-  </nav>
-
     {% block head%}{% endblock%}
   </head>
   <body>

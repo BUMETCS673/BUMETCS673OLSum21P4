@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body></br></br></br></br></br>
-     <div align="center">
-          <div align="center" class="border">
-             <div class="header">
-                <h1 class="word">Index</h1>
-             </div></br></br></br>
-                <h1 class="bottom">
-                     Hi {{session.username}}!!</br></br> Welcome to the index page...
-                </h1></br></br></br>
-                <a href="{{ url_for('logout') }}" class="btn">Logout</a>
-          </div>
-        </div>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block head%} 
+
+{% endblock%} 
+
+{% block body%}
+{% include 'homenavigation.html' %}
+<h1>Welcome to MyDietHub</h1>
+
+<h2>This app allows you to track your calories by meal</h2>
+
+  <div id="myElement">
+	  <b>
+    <p><img src="{{ url_for('static', filename='img/pizza.jpg') }}" alt=""></p>
+  </div>
+
+{% endblock%}
