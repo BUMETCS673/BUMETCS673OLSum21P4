@@ -66,6 +66,7 @@ class MealModel(db.Model):
   meal_type = db.Column(db.String(200), nullable=False)
   food_item1 = db.Column(db.String(200), nullable=False)
   food_item2 = db.Column(db.String(200), nullable=False)
+  calories = db.Column(db.Float(), nullable=False)
   date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
 

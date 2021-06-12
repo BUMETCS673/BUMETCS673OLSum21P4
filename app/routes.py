@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_login import login_required, current_user, login_user, logout_user
 from models import UserModel, db, login, Admin
 from app import *
+from usda import extract_avg_calorie_data, usda_api_call, load_cfg
 
 # db.init_app(app)
 login.init_app(app)
@@ -174,7 +175,7 @@ def foodinput():
         calorie1 = extract_avg_calorie_data(usda_api_call(food_item1, load_cfg()))
         calorie2 = extract_avg_calorie_data(usda_api_call(food_item2, load_cfg()))
         calorie_total = calorie1 + calorie2
-
+        print(calorie_total)
         # use the received data to instantiate a Meal object
         new_meal = MealModel(meal_type=meal_type, food_item1=food_item1, food_item2=food_item2, calories=calorie_total)
 
