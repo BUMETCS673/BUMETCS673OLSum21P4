@@ -88,7 +88,7 @@ def register():
             return redirect('/login')
         else:
             msg = 'Failed to add the user!'
-    return render_template('register.html')
+    return render_template('register.html', msg=msg)
 
 
 @app.route('/logout')
