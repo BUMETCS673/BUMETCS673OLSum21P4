@@ -171,8 +171,12 @@ def foodinput():
         food_item1 = request.form['fitem1']
         food_item2 = request.form['fitem2']
 
+        calorie1 = extract_avg_calorie_data(usda_api_call(food_item1, load_cfg()))
+        calorie2 = extract_avg_calorie_data(usda_api_call(food_item2, load_cfg()))
+        calorie_total = calorie1 + calorie2
+
         # use the received data to instantiate a Meal object
-        new_meal = MealModel(meal_type=meal_type, food_item1=food_item1, food_item2=food_item2)
+        new_meal = MealModel(meal_type=meal_type, food_item1=food_item1, food_item2=food_item2, calories=calorie_total)
 
         # push the data to the sqlite db
         try:

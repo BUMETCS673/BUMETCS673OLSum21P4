@@ -24,6 +24,7 @@
     <tr>
       <th>Meal Type</th>
       <th>Food Items</th>
+      <th>Calories</th> 
       <th>Added</th>
       <th>Actions</th>
 
@@ -32,6 +33,7 @@
     <tr>
       <td> {{ meal.meal_type }}</td>
       <td> {{ meal.food_item1 }}, {{ meal.food_item2 }}</td>
+      <td> {{ meal.calories }} </td>
       <td> {{ meal.date_created.strftime("%m/%d/%Y") }}</td>
 
       <td>
