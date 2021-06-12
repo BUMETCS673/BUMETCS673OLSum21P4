@@ -9,7 +9,10 @@
 Flask-Login==0.5.0
 
 Flask-WTF==0.15.1
+<<<<<<< HEAD
 
+=======
+>>>>>>> e255712577b8369c77460e8a368037970578ac4b
 appdirs==1.4.4
 autopep8==1.5.7
 click==8.0.1
