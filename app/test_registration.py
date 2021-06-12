@@ -2,8 +2,8 @@ import unittest
 import sys
 sys.path.append("../..")
 from flask import request, url_for
-from registerLogin import app, db
-from registerLogin import *
+from app import app
+from routes import *
 from models import *
 
 class RegistrationTests(unittest.TestCase):
