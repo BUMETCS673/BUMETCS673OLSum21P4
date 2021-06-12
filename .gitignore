@@ -1,10 +1,9 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+# created by virtualenv automatically
+env/*
+.vscode/*
+*.db
+.idea/*
 
-# C extensions
-*.so
 
 # Distribution / packaging
 .Python
@@ -104,7 +103,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+
 venv/
 ENV/
 env.bak/
@@ -171,3 +170,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk-
+
