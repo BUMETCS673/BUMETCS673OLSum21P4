@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+
+{% block head%} 
+ 
+ <title>Meal Input Page</title>
+
+{% endblock%}
+
+{% block body%}
+{% include 'mealsnavigation.html' %}
+<h1>Enter Meal Details Below</h1>
+
+<div class="meal">
+  <form action="/foodinput" method = 'POST'>
+    <label for="Meal Type:">Meal Type:</label>
+    <input type="text" id="meal_type" name="meal_type"><br><br>
+    
+    <label for="fitem1">Food Item 1:</label>
+    <input type="text" id="fitem1" name="fitem1"><br><br>
+    
+    <label for="fitem1">Food Item 2:</label>
+    <input type="text" id="fitem2" name="fitem2"><br><br>
+    
+    <input class='button' type="submit" value="Submit">
+  </form>
+  {% if message != '' %}
+    <p>{{ message }}</p>
+  {% endif %}
+  <form method="get" action="/foodtable">
+    <button class='button' type="submit">View Meals</button>
+  </form>
+
+  
+</div>
+
+{% endblock%}

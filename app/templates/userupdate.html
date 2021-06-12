@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head%}
+<title>Retrieve User Information</title>
+{% endblock%}
+
+{% block body%}
+<h1>Update User Details Below</h1>
+<div align="center">
+ <div align="center" class="formborder">
+  <div class="userupdate">
+    <form action="" method = 'POST'>
+      <label for="ufirstname:">Firstname:</label>
+      <input type="text" id="ufirstname" name="firstname" value={{user.firstname}}><br><br>
+
+      <label for="ulastname">Lastname:</label>
+      <input type="text" id="ulastname" name="lastname" value={{user.lastname}}><br><br>
+
+      <label for="uusername">Username:</label>
+      <input type="text" id="uusername" name="username" value={{user.username}}><br><br>
+
+      <label for="upassword">Password:</label>
+      <input type="password" id="upassword" name="password" value={{user.password}}><br><br>
+
+      <label for="uemail">Email:</label>
+      <input type="text" id="uemail" name="email" value={{user.email}}><br><br>
+
+      <input type="submit" class="button" value="Update">
+    </form>
+    <br><br>
+   </div>
+  </div>
+</div>
+
+{% endblock%}
