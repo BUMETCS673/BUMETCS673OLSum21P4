@@ -9,7 +9,6 @@
 Flask-Login==0.5.0
 
 Flask-WTF==0.15.1
-=======
 appdirs==1.4.4
 autopep8==1.5.7
 click==8.0.1
