@@ -2,7 +2,7 @@ import requests
 import json
 import yaml
 from pyprojroot import here
-from statistics import fmean
+from statistics import fmean, StatisticsError
 
 
 def load_cfg():
@@ -31,7 +31,12 @@ def extract_avg_calorie_data(json_data):
         cals = [x for x in item['foodNutrients'] if x['nutrientName'].lower() == 'energy']
         cal_list.append(cals[0]['value'])
 
-    return fmean(cal_list)
+    try:
+        cal_avg = fmean(cal_list)
+    except StatisticsError as e:
+        raise Exception('Entered food not found in database') from e
+
+    return cal_avg
 
 
 #for testing
