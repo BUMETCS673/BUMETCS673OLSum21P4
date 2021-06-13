@@ -1,6 +1,8 @@
+import unittest
+import sys
+sys.path.append("../app/")
 from app import app, db
 import os
-import unittest
 from datetime import datetime
 
 from models import MealModel
@@ -39,7 +41,9 @@ with app.app_context():
             self.assertEqual(response.status_code, 200)
 
         def test_add_meal(self):
-            response = self.app.post('/foodinput', data=dict(meal_type="Lunch", fitem1='Soup', fitem2='Apple' ), follow_redirects=True)
+            #disable login for test
+            app.config['LOGIN_DISABLED'] = True
+            response = self.app.post('/foodinput', data=dict(meal_type="Lunch", fitem1='Soup', fitem2='Apple'), follow_redirects=True)
             self.assertTrue(b'Meal Added' in response.data)
     
 

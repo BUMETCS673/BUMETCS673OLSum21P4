@@ -161,7 +161,7 @@ def delete_user_record(id):
 
 # route to CREATE a meal entry
 @app.route('/foodinput', methods=['POST', 'GET'])  # render food input page
-@login_required
+#@login_required
 def foodinput():
     # get the data from the form
     if request.method == 'POST':
