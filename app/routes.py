@@ -172,12 +172,12 @@ def foodinput():
         try:
             calorie1 = extract_avg_calorie_data(usda_api_call(food_item1, load_cfg()))
         except Exception as e:
-            return render_template('foodinput.html', message="The food was not found in the USDA database.")
+            return render_template('foodinput.html', message=e)
 
         try:
             calorie2 = extract_avg_calorie_data(usda_api_call(food_item2, load_cfg()))
         except Exception as e:
-            return render_template('foodinput.html', message="The food was not found in the USDA database.")
+            return render_template('foodinput.html', message=e)
 
         calorie_total = calorie1 + calorie2
         print(calorie_total)

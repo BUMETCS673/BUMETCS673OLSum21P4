@@ -14,6 +14,9 @@ def load_cfg():
 
 def usda_api_call(search_term: str, cfg: dict):
 
+    if not search_term:
+        raise Exception('No Food Item Entered')
+
     api_key = cfg["usda"]['api_key']
     api_str = 'https://api.nal.usda.gov/fdc/v1/foods/search?query={}&pageSize=2&api_key={}'.format(search_term, api_key)
 
