@@ -39,13 +39,11 @@ def login():
         user = UserModel.query.filter_by(username=username).first()
         if user is not None:
             if user.role == 'customer':
-                user = UserModel(user.firstname, user.lastname, user.email,
-                                 user.username, user.password, user.role)
+                user = UserModel(user.firstname, user.lastname, user.email, user.username, user.password, user.role)
 
                 path = '/foodinput'
             else:
-                user = Admin(user.firstname, user.lastname, user.email,
-                             user.username, user.password, user.role)
+                user = Admin(user.firstname, user.lastname, user.email, user.username, user.password, user.role)
                 path = '/admin/data'
             user = user.check_username_exist(username)
             if user.check_password(password):
@@ -73,8 +71,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
-        customer = UserModel(firstname, lastname, email,
-                             username, password, role)
+        customer = UserModel(firstname, lastname, email, username, password, role)
         if customer.check_username_exist(username):
             msg = 'Username is already exist'
             return render_template('register.html', msg=msg)
@@ -172,8 +169,16 @@ def foodinput():
         food_item1 = request.form['fitem1']
         food_item2 = request.form['fitem2']
 
-        calorie1 = extract_avg_calorie_data(usda_api_call(food_item1, load_cfg()))
-        calorie2 = extract_avg_calorie_data(usda_api_call(food_item2, load_cfg()))
+        try:
+            calorie1 = extract_avg_calorie_data(usda_api_call(food_item1, load_cfg()))
+        except Exception as e:
+            return render_template('foodinput.html', message="The food was not found in the USDA database.")
+
+        try:
+            calorie2 = extract_avg_calorie_data(usda_api_call(food_item2, load_cfg()))
+        except Exception as e:
+            return render_template('foodinput.html', message="The food was not found in the USDA database.")
+
         calorie_total = calorie1 + calorie2
         print(calorie_total)
         # use the received data to instantiate a Meal object
