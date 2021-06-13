@@ -2,6 +2,9 @@ from flask import Flask, json, render_template, url_for, jsonify, request, redir
 # from flask_cors import CORS
 from datetime import datetime
 from models import *
+import os
+
+
 
 # instantiate a Flask application and store that in 'app'
 app = Flask(__name__)
@@ -14,6 +17,14 @@ app.secret_key = 'xf7\xc4\xfa\x91'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../database/data.db'
 app.config['SQLALCHEMY_BINDS'] = {'two': 'sqlite:///../database/meal.db'}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# path
+path = '../database'
+if not os.path.isdir(path):
+    try:
+        os.mkdir(path)
+    except OSError as error:
+        print("Cannot create the database folder.")
 
 user = UserModel()
 admin = Admin()
