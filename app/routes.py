@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_login import login_required, current_user, login_user, logout_user
 from models import UserModel, db, login, Admin
+from sqlalchemy import exc
 from app import *
 from usda import extract_avg_calorie_data, usda_api_call, load_cfg
 
