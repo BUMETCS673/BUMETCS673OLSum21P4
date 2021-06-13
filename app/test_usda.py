@@ -3,7 +3,6 @@ import os
 from usda import extract_avg_calorie_data, usda_api_call, load_cfg
 from pyprojroot import here
 
-
 class TestUSDAMethods(unittest.TestCase):
 
     def test_load_cfg(self):
