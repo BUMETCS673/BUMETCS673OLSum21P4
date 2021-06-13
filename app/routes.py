@@ -236,6 +236,20 @@ def update_meal(id):
         meal.food_item2 = request.form['fitem2']
 
         try:
+            calorie1 = extract_avg_calorie_data(usda_api_call(meal.food_item1, load_cfg()))
+            print("Inside food_item1 api calorie call")
+        except Exception as e:
+            return render_template('foodtable.html', message=e)
+
+        try:
+            calorie2 = extract_avg_calorie_data(usda_api_call(meal.food_item2, load_cfg()))
+            print("Inside food_item2 api calorie call")
+        except Exception as e:
+            return render_template('foodtable.html', message=e)
+
+        meal.calories = calorie1 + calorie2
+        print(meal.calories)
+        try:
             db.session.commit()
             return redirect('/foodtable')
 
