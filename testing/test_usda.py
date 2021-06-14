@@ -1,5 +1,7 @@
 import unittest
 import os
+import sys
+sys.path.append("../app/")
 from usda import extract_avg_calorie_data, usda_api_call, load_cfg
 from pyprojroot import here
 
