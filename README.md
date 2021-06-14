@@ -2,9 +2,8 @@
 # BUMETCS673OLSum21P4
 
 # Project Information
-## Project Name: DietHub
-*Logo will displayed in here*
-## Team Four Members: 
+## Project Name: MyDietHub
+## Team 4 Members: 
 Instructor: Yuting Zhang<br>
 Team Leader: Ray Clark<br>
 Requirement Leader: Chen Zhao<br>
@@ -14,28 +13,47 @@ Configuration Leader: Huimin Diao<br>
 Security Leader: Zixia Zhou<br>
 Institution: [Boston University's Metropolitan College](https://www.bu.edu/met/)<br>
 
+# MyDietHub
 ## Project Description:
-In our project, we plan to build a web about **Calorie Tracker**. This application will help user to calculate their daily food's calorie is overweight or not, and if user want to build fitness meal and input their body data, our application will give some food recommendations or suggest upper limit of user's daily calories.<br>
-*see more details, plz look at Documents folder, the presentation link in SPPP file.*
+In our project, we plan to build a web about **Calorie Tracker**. MyDietHub is a full stack application built on modern frameworks that allows a user to quickly compute the calories of a given food type and for an entire meal.  The purpose of the application is to allow a user to track their caloric intake and thereby track and regulate their diet. 
 
-# Web Page Preview
-- Landing Page
-![Landing Page!](images/landingpage_draft.png)
+## HomePage
+![Main](/images/HomePage.png)
 
-- Rigster/Login
+## Login&Rigster Page
+![L&R](/images/Login.png)</br>
+![L&R](/images/Rigster.png)
 
-- Main Page
+## Creat Meal Page
+![CM](/images/CreatMeal.png)</br>
 
-- User Profile
+## View Meal Page
+![VM](/images/ViewMeal.png)
+
+## Architecture
+![Architecture](/images/Model-View-Controller Architecture.png)
+
+## Diagram
+### Use Case Diagram
+![UCD](/images/usercasedg.png)
+
+### Class Diagram
+![CD](/images/classdg.png)
+### Database Diagram 
+![DB](/images/DBdg.png)
+
+## UI/UX Designs (Wireframes)
+![Main](https://share.balsamiq.com/c/kCZKwKCjeQ1W7tebjdvSQa.png)</br>
+![Login](https://share.balsamiq.com/c/6oabXCTn2pJjHXDZSLruoo.png)</br>
+![Register](https://share.balsamiq.com/c/qBoxguZDgvZrkEV3oF5MHZ.png)</br>
+![Creat Meals](https://share.balsamiq.com/c/7A8jHbBbAtNhVH9nDAYqkN.png)</br>
+![View Meals](https://share.balsamiq.com/c/kuoZxZWff5T249JQcu2Lm3.png)</br>
+![Logout](https://share.balsamiq.com/c/wXP8nRs13yeKjcK4UwAL8q.png)</br>
 
 
+## Overall Project Summary
 
-## Project Functions:
-We plan to build two main functions about our web application project.
-- To let the user enter the food type and food weight, the application will return the calories of the food and the total calories of the meal, then application will display a warning or suggestion if the total calories is over.
-- To let the user enter the age, weight and height and the application will calculate the BMI, then according to the BMI, the application will recommend some food or amount of calories the user can take.<br>
 
-*Since this is draft version, maybe we will update our project's function.*
 
 ## Technical Requirement List
 - [Python](https://www.python.org/)<br>
