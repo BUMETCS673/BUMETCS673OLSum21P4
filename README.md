@@ -31,7 +31,7 @@ In our project, we plan to build a web about **Calorie Tracker**. MyDietHub is a
 ![VM](/images/ViewMeal.png)
 
 ## Architecture
-![Architecture](/images/Model-View-Controller Architecture.png)
+![Architecture](/images/Architecture.png)
 
 ## Diagram
 ### Use Case Diagram
