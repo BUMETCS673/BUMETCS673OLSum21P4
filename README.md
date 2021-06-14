@@ -42,11 +42,6 @@ In our project, we plan to build a web about **Calorie Tracker**. MyDietHub is a
 ### Database Diagram 
 ![DB](/images/DBdg.png)
 
-
-## Use Cases
-
-## Diagram
-
 ## UI/UX Designs (Wireframes)
 ![Main](https://share.balsamiq.com/c/kCZKwKCjeQ1W7tebjdvSQa.png)</br>
 ![Login](https://share.balsamiq.com/c/6oabXCTn2pJjHXDZSLruoo.png)</br>
