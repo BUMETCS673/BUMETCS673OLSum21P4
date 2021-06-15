@@ -58,6 +58,7 @@ After the above requirements are met, the following steps will run the app
 - `pip install -r requirements.txt`
 - navigate to app folder and type `flask run`
 - go to link and port specified in console using a browser to see the app
+- can use username(admin1) and password(admin1) to login to the admin dashboard
 
 
 
