@@ -2,8 +2,8 @@
 # BUMETCS673OLSum21P4
 
 # Project Information
-## Project Name: DietHub
-*Logo will displayed in here*
+## Project Name: MyDietHub
+![Logo!](images/logo.png)
 ## Team Four Members: 
 Instructor: Yuting Zhang<br>
 Team Leader: Ray Clark<br>
@@ -15,18 +15,18 @@ Security Leader: Zixia Zhou<br>
 Institution: [Boston University's Metropolitan College](https://www.bu.edu/met/)<br>
 
 ## Project Description:
-In our project, we plan to build a web about **Calorie Tracker**. This application will help user to calculate their daily food's calorie is overweight or not, and if user want to build fitness meal and input their body data, our application will give some food recommendations or suggest upper limit of user's daily calories.<br>
-*see more details, plz look at Documents folder, the presentation link in SPPP file.*
+In our project, we plan to build a  **Calorie Tracker**. This application will help the user to calculate their daily calorie counts.<br>
+*More details can be found in the documents folder*
 
 # Web Page Preview
 - Landing Page
-![Landing Page!](images/landingpage_draft.png)
+![Landing Page!](images/HomePage.png)
 
-- Rigster/Login
+- Register/Login
+![Registration!](images/Register.png)    
+- Food Log
+![Food Log!](images/ViewMeal.png)
 
-- Main Page
-
-- User Profile
 
 
 
@@ -35,7 +35,7 @@ We plan to build two main functions about our web application project.
 - To let the user enter the food type and food weight, the application will return the calories of the food and the total calories of the meal, then application will display a warning or suggestion if the total calories is over.
 - To let the user enter the age, weight and height and the application will calculate the BMI, then according to the BMI, the application will recommend some food or amount of calories the user can take.<br>
 
-*Since this is draft version, maybe we will update our project's function.*
+
 
 # Requirements
 - Python 3.8+
@@ -58,10 +58,7 @@ After the above requirements are met, the following steps will run the app
 - `pip install -r requirements.txt`
 - navigate to app folder and type `flask run`
 - go to link and port specified in console using a browser to see the app
-## Technical Requirement List
-- [Python](https://www.python.org/)<br>
-- [flask](https://palletsprojects.com/p/flask/)<br>
-- [JavaScript](https://www.javascript.com/)<br>
-- HTML/CSS
+
+
 
 
