@@ -4,7 +4,7 @@
 
 # Project Information
 ## Project Name: MyDietHub
-![Logo!](images/logo.png)
+![Logo!](https://github.com/BUMETCS673/BUMETCS673OLSum21P4/blob/develop/images/logo.png)
 ## Team Four Members: 
 Instructor: Yuting Zhang<br>
 Team Leader: Ray Clark<br>
@@ -21,12 +21,12 @@ In our project, we plan to build a  **Calorie Tracker**. This application will h
 
 # Web Page Preview
 - Landing Page
-![Landing Page!](images/HomePage.png)
+![Landing Page!](https://github.com/BUMETCS673/BUMETCS673OLSum21P4/blob/develop/images/HomePage.png)
 
 - Register/Login
-![Registration!](images/Register.png)    
+![Registration!](https://github.com/BUMETCS673/BUMETCS673OLSum21P4/blob/develop/images/Register.png)    
 - Food Log
-![Food Log!](images/ViewMeal.png)
+![Food Log!](https://github.com/BUMETCS673/BUMETCS673OLSum21P4/blob/develop/images/ViewMeal.png)
 
 
 
