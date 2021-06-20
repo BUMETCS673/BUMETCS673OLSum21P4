@@ -233,6 +233,11 @@ class SystemTesting(LiveServerTestCase):
         update_username = user_username+'Update'
         update_password = user_password +'Update'
         update_email = 'st_test1Upate@123.com'
+        self.driver.find_element_by_xpath('//*[@id="ufirstname"]').clear()
+        self.driver.find_element_by_xpath('//*[@id="ulastname"]').clear()
+        self.driver.find_element_by_xpath('//*[@id="uusername"]').clear()
+        self.driver.find_element_by_xpath('//*[@id="upassword"]').clear()
+        self.driver.find_element_by_xpath('//*[@id="uemail"]').clear()
         self.driver.find_element_by_xpath('//*[@id="ufirstname"]').send_keys(update_firstname)
         self.driver.find_element_by_xpath('//*[@id="ulastname"]').send_keys(update_lastname)
         self.driver.find_element_by_xpath('//*[@id="uusername"]').send_keys(update_username)
@@ -242,6 +247,17 @@ class SystemTesting(LiveServerTestCase):
 
         elem = self.driver.find_element_by_xpath('/html/body/h1')
         self.assertEqual(elem.text, 'User Details')
+
+        #Validate the update user information
+        elem = self.driver.find_element_by_xpath('/html/body/div[2]/table/tbody/tr[2]/td[1]')
+        self.assertEqual(elem.text, update_firstname)
+        elem = self.driver.find_element_by_xpath('/html/body/div[2]/table/tbody/tr[2]/td[2]')
+        self.assertEqual(elem.text, update_lastname)
+        elem = self.driver.find_element_by_xpath('/html/body/div[2]/table/tbody/tr[2]/td[3]')
+        self.assertEqual(elem.text, update_username)
+        elem = self.driver.find_element_by_xpath('/html/body/div[2]/table/tbody/tr[2]/td[5]')
+        self.assertEqual(elem.text, update_email)
+
 
     def test_13_admin_delete_user_ST_12(self):
         self.test_11_admin_login_ST_10()
