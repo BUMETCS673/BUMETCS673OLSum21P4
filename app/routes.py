@@ -170,15 +170,18 @@ def foodinput():
         food_item1 = request.form['fitem1']
         food_item2 = request.form['fitem2']
 
-        try:
-            calorie1 = extract_avg_calorie_data(usda_api_call(food_item1, load_cfg()))
-        except Exception as e:
-            return render_template('foodinput.html', message=e)
+        if food_item1 or food_item2:
+            try:
+                calorie1 = extract_avg_calorie_data(usda_api_call(food_item1, load_cfg()))
+            except Exception as e:
+                return render_template('foodinput.html', message=e)
 
-        try:
-            calorie2 = extract_avg_calorie_data(usda_api_call(food_item2, load_cfg()))
-        except Exception as e:
-            return render_template('foodinput.html', message=e)
+            try:
+                calorie2 = extract_avg_calorie_data(usda_api_call(food_item2, load_cfg()))
+            except Exception as e:
+                return render_template('foodinput.html', message=e)
+        else:
+            return render_template('foodinput.html', message='No foods entered')
 
         calorie_total = calorie1 + calorie2
         print(calorie_total)
