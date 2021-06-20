@@ -41,6 +41,6 @@ pyprojroot~=0.2.0
 pytest~=6.2.4
 
 #Testing dependencies
-selenium=3.141.0
-Flask-Testing=0.8.1
-html-testRunner=1.2.1
+selenium~=3.141.0
+Flask-Testing~=0.8.1
+html-testRunner~=1.2.1
