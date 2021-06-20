@@ -1,5 +1,6 @@
 import os
 import sys
+import HtmlTestRunner
 import unittest
 import time
 import urllib
@@ -145,7 +146,7 @@ class SystemTesting(LiveServerTestCase):
         self.assertEqual(elem.text, 'Meal Added')
 
 
-    def test_9_update_meal_ST_08(self):
+    def test_9_update_meal_ST_09(self):
         self.test_8_create_meal_ST_08()
         time.sleep(2)
         # Click 'View Meal' link
@@ -183,7 +184,7 @@ class SystemTesting(LiveServerTestCase):
         today = datetime.utcnow()
         self.assertEqual(elem.text, today.strftime('%m/%d/%Y'))
 
-    def test_10_delete_meal_ST_09(self):
+    def test_10_delete_meal_ST_10(self):
         self.test_8_create_meal_ST_08()
         time.sleep(2)
         # Click 'View Meal' link
@@ -202,7 +203,7 @@ class SystemTesting(LiveServerTestCase):
         elem = self.driver.find_element_by_xpath('/html/body/h3')
         self.assertEqual(elem.text, "There are no meals entered. Please create one.")
 
-    def test_11_admin_login_ST_10(self):
+    def test_11_admin_login_ST_11(self):
         self.test_4_login_page_ST_04()
         username = self.driver.find_element_by_xpath('//*[@id="username"]')
         username.send_keys(admin_username)
@@ -214,7 +215,7 @@ class SystemTesting(LiveServerTestCase):
         elem = self.driver.find_element_by_xpath('/html/body/h1')
         self.assertEqual(elem.text, 'Retrieve User Information')
 
-    def test_12_admin_update_user_ST_11(self):
+    def test_12_admin_update_user_ST_12(self):
         self.test_11_admin_login_ST_10()
         self.driver.find_element_by_xpath('//*[@id="username"]').send_keys(user_username)
         self.driver.find_element_by_xpath('/html/body/div[2]/form/button').click()
@@ -259,7 +260,7 @@ class SystemTesting(LiveServerTestCase):
         self.assertEqual(elem.text, update_email)
 
 
-    def test_13_admin_delete_user_ST_12(self):
+    def test_13_admin_delete_user_ST_13(self):
         self.test_11_admin_login_ST_10()
         self.driver.find_element_by_xpath('//*[@id="username"]').send_keys(user_username)
         self.driver.find_element_by_xpath('/html/body/div[2]/form/button').click()
@@ -288,4 +289,4 @@ if __name__ == '__main__':
         print("ERROR : Not accept this parameter!")
         sys.exit()
 
-    unittest.main(warnings='ignore')
+    unittest.main(warnings='ignore', testRunner=HtmlTestRunner.HTMLTestRunner(output='test_result'))
