@@ -216,7 +216,7 @@ class SystemTesting(LiveServerTestCase):
         self.assertEqual(elem.text, 'Retrieve User Information')
 
     def test_12_admin_update_user_ST_12(self):
-        self.test_11_admin_login_ST_10()
+        self.test_11_admin_login_ST_11()
         self.driver.find_element_by_xpath('//*[@id="username"]').send_keys(user_username)
         self.driver.find_element_by_xpath('/html/body/div[2]/form/button').click()
         time.sleep(2)
@@ -261,7 +261,7 @@ class SystemTesting(LiveServerTestCase):
 
 
     def test_13_admin_delete_user_ST_13(self):
-        self.test_11_admin_login_ST_10()
+        self.test_11_admin_login_ST_11()
         self.driver.find_element_by_xpath('//*[@id="username"]').send_keys(user_username)
         self.driver.find_element_by_xpath('/html/body/div[2]/form/button').click()
         time.sleep(2)
