@@ -19,11 +19,11 @@ from flask_testing import LiveServerTestCase
 # Set test variables for test user and admin user
 admin_username = "admin1"
 admin_password = "admin1"
-user_username = "st_test1"
-user_password = "st_test1"
-user_firstname = "st_test1Firstname"
-user_lastname = "st_test1lastname"
-user_email = "st_test1@123.com"
+user_username = "sttest1"
+user_password = "sttest1"
+user_firstname = "sttest1Firstname"
+user_lastname = "sttest1lastname"
+user_email = "sttest1@123.com"
 
 
 class SystemTesting(LiveServerTestCase):
@@ -100,7 +100,7 @@ class SystemTesting(LiveServerTestCase):
         lastname = self.driver.find_element_by_xpath('//*[@id="lastname"]')
         lastname.send_keys(user_lastname)
         username = self.driver.find_element_by_xpath('//*[@id="username"]')
-        username.send_keys('ST_REGISTER')
+        username.send_keys('STREGISTER')
         password = self.driver.find_element_by_xpath('//*[@id="password"]')
         password.send_keys(user_password)
         email = self.driver.find_element_by_xpath('//*[@id="email"]')
@@ -233,7 +233,7 @@ class SystemTesting(LiveServerTestCase):
         update_lastname = user_lastname+'Update'
         update_username = user_username+'Update'
         update_password = user_password +'Update'
-        update_email = 'st_test1Upate@123.com'
+        update_email = 'sttest1Upate@123.com'
         self.driver.find_element_by_xpath('//*[@id="ufirstname"]').clear()
         self.driver.find_element_by_xpath('//*[@id="ulastname"]').clear()
         self.driver.find_element_by_xpath('//*[@id="uusername"]').clear()
