@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+  <!--Horizontal Navigation Bar Here-->
+  <div class="hero-banner">
+    <div class="hero-img hero-img-1">
+      <div class="overlay">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" class="logo">
+    </div>
+    </div>
+    <div class="hero-img hero-img-2">
+      <div class="overlay"></div>
+    </div>
+    <div class="hero-img hero-img-3">
+      <div class="overlay"></div>
+    </div>
+  </div>
+    {% block head%}{% endblock%}
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="" async defer></script>
+
+    {% block body%}{% endblock%}
+  </body>
+</html>

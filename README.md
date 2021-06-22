@@ -3,7 +3,12 @@
 
 # Project Information
 ## Project Name: MyDietHub
+
+![Logo!](images/logo.png)
+## Team Four Members: 
+=======
 ## Team 4 Members: 
+>>>>>>> main
 Instructor: Yuting Zhang<br>
 Team Leader: Ray Clark<br>
 Requirement Leader: Chen Zhao<br>
@@ -15,20 +20,19 @@ Institution: [Boston University's Metropolitan College](https://www.bu.edu/met/)
 
 # MyDietHub
 ## Project Description:
-In our project, we plan to build a web about **Calorie Tracker**. MyDietHub is a full stack application built on modern frameworks that allows a user to quickly compute the calories of a given food type and for an entire meal.  The purpose of the application is to allow a user to track their caloric intake and thereby track and regulate their diet. 
 
-## HomePage
-![Main](/images/HomePage.png)
+In our project, we plan to build a  **Calorie Tracker**. This application will help the user to calculate their daily calorie counts.<br>
+*More details can be found in the documents folder*
 
-## Login&Rigster Page
-![L&R](/images/Login.png)</br>
-![L&R](/images/Rigster.png)
+# Web Page Preview
+- Landing Page
+![Landing Page!](images/HomePage.png)
 
-## Creat Meal Page
-![CM](/images/CreatMeal.png)</br>
-
-## View Meal Page
-![VM](/images/ViewMeal.png)
+- Register/Login
+![Registration!](images/Register.png)    
+- Food Log
+![Food Log!](images/ViewMeal.png)
+  
 
 ## Architecture
 ![Architecture](/images/Architecture.png)
@@ -51,14 +55,29 @@ In our project, we plan to build a web about **Calorie Tracker**. MyDietHub is a
 ![Logout](https://share.balsamiq.com/c/wXP8nRs13yeKjcK4UwAL8q.png)</br>
 
 
-## Overall Project Summary
+# Requirements
+- Python 3.8+
+- mysql
+- flask 2.0.1+
 
 
+# Notes on mysql
+On OSX, mysql can be easily installed using homebrew by the command:
+```angular2html
+brew install mysql
+```
+On Windows, mysql can be installed from binary sources.
 
-## Technical Requirement List
-- [Python](https://www.python.org/)<br>
-- [flask](https://palletsprojects.com/p/flask/)<br>
-- [JavaScript](https://www.javascript.com/)<br>
-- HTML/CSS
+# Running instructions
+After the above requirements are met, the following steps will run the app
+- clone repository
+- navigate to cloned folder
+- create virtualenv with `venv <NAME>` and activate it
+- `pip install -r requirements.txt`
+- navigate to app folder and type `flask run`
+- go to link and port specified in console using a browser to see the app
+- can use username(admin1) and password(admin1) to login to the admin dashboard
+
+
 
 

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block head%} 
+ 
+ <title>Meal Update Page</title>
+
+{% endblock%}
+
+{% block body%}
+{% include 'mealsnavigation.html' %}
+<h1>Update Meal Details Below</h1>
+
+<div class="meal">
+  <form action="/update/{{meal.id}}" method = 'POST'>
+    <label for="Meal Type:">Meal Type:</label><br>
+    <input type="text" id="meal_type" name="meal_type" value={{meal.meal_type}}><br><br>
+    
+    <label for="fitem1">Food Item 1:</label><br>
+    <input type="text" id="fitem1" name="fitem1" value={{meal.food_item1}}><br><br>
+    
+    <label for="fitem1">Food Item 2:</label><br>
+    <input type="text" id="fitem2" name="fitem2" value={{meal.food_item2}}><br><br>
+    
+    <input type="submit" value="Update">
+  </form>
+  <br><br>
+</div>
+
+{% endblock%}

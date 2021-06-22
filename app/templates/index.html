@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head%} 
+
+{% endblock%} 
+
+{% block body%}
+{% include 'homenavigation.html' %}
+<h1>Welcome to MyDietHub</h1>
+
+<h2>This app allows you to track your calories by meal</h2>
+
+  <div id="myElement">
+	  <b>
+    <p><img src="{{ url_for('static', filename='img/pizza.jpg') }}" alt=""></p>
+  </div>
+
+{% endblock%}

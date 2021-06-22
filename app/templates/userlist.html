@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block head%}
+
+ <title>Retrieve User Information</title>
+
+{% endblock%}
+
+{% block body%}
+{% include 'adminnavigation.html' %}
+<h1>User Details</h1>
+
+
+<div class="userlistform">
+  <!--Display database results here-->
+  <table class="table1">
+    <h2>The action links will allow you to delete or update user</h2>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Username</th>
+      <th>Password </th>
+      <th>Email</th>
+
+    </tr>
+    <tr>
+      <td> {{ user.firstname }}</td>
+      <td> {{ user.lastname }}</td>
+      <td> {{ user.username }}</td>
+      <td> ********* </td>
+      <td> {{ user.email}} </td>
+      <td>
+        <a href="/admin/data/delete/{{user.id}}">Delete</a>
+        <br><br>
+        <a href="/admin/data/update/{{user.id}}">Update</a>
+        <br>
+      </td>
+    </tr>
+
+  </table>
+</div>
+{% endblock%}

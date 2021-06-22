@@ -1,0 +1,51 @@
+{% extends 'base.html' %} 
+
+{% block head%} 
+ 
+ <title>Meal List Page</title>
+
+{% endblock%}
+
+{% block body%}
+{% include 'mealsnavigation.html' %}
+
+<h1>List of Past Meals</h1>
+
+<!--first, check to see if any meals have been entered-->
+{% if meals|length < 1 %}
+<h3>There are no meals entered.  Please create one.</h3>
+
+{% else %}
+<div class="meal">
+
+  <!--Display database results here-->
+  <table class="table1">
+    <h2>The action links will allow you to delete or update a meal</h2>
+    <tr>
+      <th>Meal Type</th>
+      <th>Food Items</th>
+      <th>Calories</th> 
+      <th>Added</th>
+      <th>Actions</th>
+
+    </tr>
+  {% for meal in meals %}
+    <tr>
+      <td> {{ meal.meal_type }}</td>
+      <td> {{ meal.food_item1 }}, {{ meal.food_item2 }}</td>
+      <td> {{ meal.calories }} </td>
+      <td> {{ meal.date_created.strftime("%m/%d/%Y") }}</td>
+
+      <td>
+        <a href="/delete/{{meal.id}}">Delete</a>
+        <br><br>
+        <a href="/update/{{meal.id}}">Update</a>
+        <br>
+      </td>
+    </tr>
+  {% endfor %}
+
+  </table>
+</div>
+{% endif %}
+{% endblock%}

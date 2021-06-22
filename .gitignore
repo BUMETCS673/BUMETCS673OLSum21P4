@@ -1,15 +1,17 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-.idea*
-database/*
+# created by virtualenv automatically
+env/*
+.vscode/*
 *.db
-*.DS_Store
+.idea/*
 
 # C extensions
 *.so
+
+
+.idea*
+database/*
+
+*.DS_Store
 
 # Distribution / packaging
 .Python
@@ -109,7 +111,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
-env/
+
 venv/
 ENV/
 env.bak/
@@ -132,3 +134,48 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#other files that don't need to be in version control
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+### Windows template
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk-
+

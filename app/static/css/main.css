@@ -1,0 +1,177 @@
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: blue;
+  text-align: center;
+}
+
+h1 {
+  margin: 3;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: blue;
+  text-align: center;
+}
+
+h2 {
+  margin: 3;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: peru;
+  text-align: center;
+}
+
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: blue;
+  text-align: center;
+  display: inline-block;
+}
+
+img {
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;
+}
+
+p {
+  margin: 5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: green;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.button {
+  background-color: #1E90FF; /* Dodger Blue */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 30px;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.field {
+  display: table;
+  width: 100%;
+}
+
+field label,
+field input {
+  display: table-cell;
+}
+
+.meal {
+  padding: 10px;
+  border: 5px solid #333;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+table,
+th,
+td {
+  text-align: center;
+  border: 1px solid black;
+  border-collapse: collapse;
+  outline-style: solid;
+  outline-color: black;
+  outline-width: thin;
+  margin: 1px;
+  padding: 1px;
+}
+.active {
+  background-color: #04aa6d;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: inline-grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+}
+
+.hero-img {
+  border: 5px solid white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.hero-img-1 {
+  background-image: url(../img/pancakes.jpg);
+  background-color: rgba(106, 107, 108, 0.4);
+  grid-column: 1;
+  grid-row: 1;
+}
+.hero-img-2 {
+  background-image: url(../img/salad.jpg);
+  grid-column: 2;
+  grid-row: 1;
+}
+.hero-img-3 {
+  background-image: url(../img/salmon.jpg);
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(106, 107, 108, 0.4);
+}
+
+.logo {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.table1 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formborder{
+                padding: 80px 50px;
+                width: 300px;
+                height: 250px;
+                border: 1px solid #236B8E;
+                border-radius: 0px;
+                background-color:#F0F8FF
+            }
+
+#about p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 10px 60px;
+  text-align: left;
+  color: green;

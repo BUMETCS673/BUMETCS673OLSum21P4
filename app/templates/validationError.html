@@ -1,0 +1,23 @@
+{% extends 'base.html' %} 
+
+{% block head%} 
+ 
+ <title>Validation Error</title>
+
+{% endblock%}
+
+{% block body%}
+{% include 'mealsnavigation.html' %}
+<h1>Validation Error</h1>
+
+<div class="error">
+
+  {% if message != '' %}
+    <p>{{ message }}</p>
+  {% endif %}
+
+
+  
+</div>
+
+{% endblock%}
