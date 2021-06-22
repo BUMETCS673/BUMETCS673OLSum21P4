@@ -21,7 +21,7 @@ def usda_api_call(search_term: str, cfg: dict):
 
     api_key = cfg["usda"]['api_key']
     api_str = 'https://api.nal.usda.gov/fdc/v1/foods/search?query={}&pageSize=2&api_key={}'\
-        .format(quote(search_term), api_key)
+        .format(quote(search_term.lower()), api_key)
 
     response = requests.get(api_str)
     json_data = json.loads(response.text)
