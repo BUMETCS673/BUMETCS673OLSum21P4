@@ -38,7 +38,7 @@ def extract_avg_calorie_data(json_data):
         cal_list.append(cals[0]['value'])
 
     try:
-        cal_avg = fmean(cal_list[0])
+        cal_avg = fmean(cal_list)
     except StatisticsError as e:
         raise Exception('Entered food not found in database') from e
 
@@ -47,4 +47,4 @@ def extract_avg_calorie_data(json_data):
 
 #for testing
 if __name__ == '__main__':
-    print(extract_avg_calorie_data(usda_api_call('hamburger', load_cfg())))
+    print(extract_avg_calorie_data(usda_api_call('noodle', load_cfg())))
