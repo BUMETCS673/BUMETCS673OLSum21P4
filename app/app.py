@@ -4,8 +4,6 @@ from datetime import datetime
 from models import *
 import os
 
-
-
 # instantiate a Flask application and store that in 'app'
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -17,6 +15,19 @@ app.secret_key = 'xf7\xc4\xfa\x91'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../database/data.db'
 app.config['SQLALCHEMY_BINDS'] = {'two': 'sqlite:///../database/meal.db'}
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+
+# Return validation errors via error page
+@app.errorhandler(422)
+@app.errorhandler(400)
+def handle_error(err):
+    headers = err.data.get("headers", None)
+    messages = err.data.get("messages", ["Invalid request."])
+    if headers:
+        return jsonify({"h-errors": messages}), err.code, headers
+    else:
+        return render_template('validationError.html', message=messages)
+
 
 # path
 path = '../database'

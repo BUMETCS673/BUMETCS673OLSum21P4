@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 from flask_login import login_required, current_user, login_user, logout_user
 from models import UserModel, db, login, Admin
 from sqlalchemy import exc
+from webargs.flaskparser import use_args, parser
+from webargs import fields, validate
 from app import *
 from usda import extract_avg_calorie_data, usda_api_call, load_cfg
 
@@ -58,6 +60,25 @@ def login():
     return render_template('login.html', msg=msg)
 
 
+reg_args = {
+    "firstname":
+        fields.Str(
+            validate=validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters'), required=True
+        ),
+    "lastname":
+        fields.Str(
+            validate=validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters'), required=True
+        ),
+    "email": fields.Str(validate=validate.Email(error='Please do not use special characters'), required=True),
+    "username":
+        fields.Str(
+            validate=validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters'), required=True
+        ),
+    "password":
+        fields.Str(validate=validate.Length(min=6, error='Minimum Password length is 6 characters'), required=True)
+}
+
+
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     msg = ' '
@@ -66,11 +87,18 @@ def register():
         return redirect('/index')
 
     if request.method == 'POST':
-        firstname = request.form['firstname']
-        lastname = request.form['lastname']
-        email = request.form['email']
-        username = request.form['username']
-        password = request.form['password']
+        # firstname = request.form['firstname']
+        # lastname = request.form['lastname']
+        # email = request.form['email']
+        # username = request.form['username']
+        # password = request.form['password']
+
+        args = parser.parse(reg_args, request, location='form')
+        firstname = args['firstname']
+        lastname = args['lastname']
+        email = args['email']
+        username = args['username']
+        password = args['password']
 
         customer = UserModel(firstname, lastname, email, username, password, role)
         if customer.check_username_exist(username):
@@ -130,12 +158,21 @@ def update_user_record(id):
     if user.check_admin(current_user.username):
         user1 = UserModel.query.get_or_404(id)
         if request.method == 'POST':
-            user1.firstname = request.form['firstname']
-            user1.lastname = request.form['lastname']
-            user1.username = request.form['username']
-            user1.password = request.form['password']
+            # user1.firstname = request.form['firstname']
+            # user1.lastname = request.form['lastname']
+            # user1.username = request.form['username']
+            # user1.password = request.form['password']
+            # user1.password = user.set_password(user1.password)
+            # user1.email = request.form['email']
+
+            args = parser.parse(reg_args, request, location='form')
+            user1.firstname = args['firstname']
+            user1.lastname = args['lastname']
+            user1.email = args['email']
+            user1.username = args['username']
+            user1.password = args['password']
             user1.password = user.set_password(user1.password)
-            user1.email = request.form['email']
+
             try:
                 db.session.commit()
                 return redirect(f'/admin/data/{user1.username}')
@@ -159,16 +196,42 @@ def delete_user_record(id):
         redirect('/')
 
 
+# dict of input validation tests for foodinput
+food_args = {
+    "meal_type":
+        fields.Str(
+            validate=[
+                validate.OneOf(['breakfast', 'lunch', 'dinner', 'snack', 'Breakfast', 'Lunch', 'Dinner', 'Snack'],
+                               error='Incorrect Meal choice: please select from breakfast, lunch, dinner or snack'),
+                validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters')
+            ],
+            required=True
+        ),
+    "fitem1":
+        fields.Str(
+            validate=[
+                validate.Length(min=2),
+                validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters')
+            ],
+            required=True
+        ),
+    "fitem2": fields.Str(validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters'))
+}
+
+
 # route to CREATE a meal entry
 @app.route('/foodinput', methods=['POST', 'GET'])  # render food input page
-#@login_required
+# @login_required
 def foodinput():
     # get the data from the form
     if request.method == 'POST':
-        # print("REQUEST", request.data)
-        meal_type = request.form['meal_type']
-        food_item1 = request.form['fitem1']
-        food_item2 = request.form['fitem2']
+        # args = parser.load_form(food_args, request)
+
+        args = parser.parse(food_args, request, location='form')
+
+        meal_type = args['meal_type']
+        food_item1 = args['fitem1']
+        food_item2 = args['fitem2']
 
         if food_item1 or food_item2:
             try:
@@ -235,10 +298,12 @@ def update_meal(id):
     meal = MealModel.query.get_or_404(id)
 
     if request.method == 'POST':
-        meal.meal_type = request.form['meal_type']
-        meal.food_item1 = request.form['fitem1']
-        meal.food_item2 = request.form['fitem2']
 
+        args = parser.parse(food_args, request, location='form')
+
+        meal.meal_type = args['meal_type']
+        meal.food_item1 = args['fitem1']
+        meal.food_item2 = args['fitem2']
         try:
             calorie1 = extract_avg_calorie_data(usda_api_call(meal.food_item1, load_cfg()))
             print("Inside food_item1 api calorie call")

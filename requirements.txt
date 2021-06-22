@@ -30,6 +30,7 @@ SQLAlchemy==1.4.15
 toml==0.10.2
 typing-extensions==3.10.0.0
 virtualenv==20.4.6
+webargs==8.0.0
 Werkzeug==2.0.1
 zipp==3.4.1
 
