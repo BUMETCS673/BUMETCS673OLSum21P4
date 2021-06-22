@@ -38,7 +38,7 @@ def extract_avg_calorie_data(json_data):
         cal_list.append(cals[0]['value'])
 
     try:
-        cal_avg = fmean(cal_list)
+        cal_avg = fmean(cal_list[0])
     except StatisticsError as e:
         raise Exception('Entered food not found in database') from e
 
