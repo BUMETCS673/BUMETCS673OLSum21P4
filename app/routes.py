@@ -215,7 +215,7 @@ food_args = {
             ],
             required=True
         ),
-    "fitem2": fields.Str(validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters'))
+    "fitem2": fields.Str(validate=validate.Regexp('^[a-zA-Z0-9 ]*$', error='Please do not use special characters'))
 }
 
 
