@@ -43,8 +43,6 @@ In our project, we plan to build a  **Calorie Tracker**. This application will h
 
 ### Class Diagram
 ![CD](/images/classdg.png)
-### Database Diagram 
-###![DB](/images/DBdg.png)
 
 ## UI/UX Designs (Wireframes)
 ![Main](https://share.balsamiq.com/c/kCZKwKCjeQ1W7tebjdvSQa.png)</br>
