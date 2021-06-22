@@ -3,8 +3,12 @@
 
 # Project Information
 ## Project Name: MyDietHub
+
 ![Logo!](images/logo.png)
 ## Team Four Members: 
+=======
+## Team 4 Members: 
+>>>>>>> main
 Instructor: Yuting Zhang<br>
 Team Leader: Ray Clark<br>
 Requirement Leader: Chen Zhao<br>
@@ -14,7 +18,9 @@ Configuration Leader: Huimin Diao<br>
 Security Leader: Zixia Zhou<br>
 Institution: [Boston University's Metropolitan College](https://www.bu.edu/met/)<br>
 
+# MyDietHub
 ## Project Description:
+
 In our project, we plan to build a  **Calorie Tracker**. This application will help the user to calculate their daily calorie counts.<br>
 *More details can be found in the documents folder*
 
@@ -26,15 +32,27 @@ In our project, we plan to build a  **Calorie Tracker**. This application will h
 ![Registration!](images/Register.png)    
 - Food Log
 ![Food Log!](images/ViewMeal.png)
+  
 
+## Architecture
+![Architecture](/images/Architecture.png)
 
+## Diagram
+### Use Case Diagram
+![UCD](/images/usercasedg.png)
 
+### Class Diagram
+![CD](/images/classdg.png)
+### Database Diagram 
+![DB](/images/DBdg.png)
 
-## Project Functions:
-We plan to build two main functions about our web application project.
-- To let the user enter the food type and food weight, the application will return the calories of the food and the total calories of the meal, then application will display a warning or suggestion if the total calories is over.
-- To let the user enter the age, weight and height and the application will calculate the BMI, then according to the BMI, the application will recommend some food or amount of calories the user can take.<br>
-
+## UI/UX Designs (Wireframes)
+![Main](https://share.balsamiq.com/c/kCZKwKCjeQ1W7tebjdvSQa.png)</br>
+![Login](https://share.balsamiq.com/c/6oabXCTn2pJjHXDZSLruoo.png)</br>
+![Register](https://share.balsamiq.com/c/qBoxguZDgvZrkEV3oF5MHZ.png)</br>
+![Creat Meals](https://share.balsamiq.com/c/7A8jHbBbAtNhVH9nDAYqkN.png)</br>
+![View Meals](https://share.balsamiq.com/c/kuoZxZWff5T249JQcu2Lm3.png)</br>
+![Logout](https://share.balsamiq.com/c/wXP8nRs13yeKjcK4UwAL8q.png)</br>
 
 
 # Requirements

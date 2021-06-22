@@ -4,6 +4,14 @@ env/*
 *.db
 .idea/*
 
+# C extensions
+*.so
+
+
+.idea*
+database/*
+
+*.DS_Store
 
 # Distribution / packaging
 .Python
