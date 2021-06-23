@@ -1,7 +1,6 @@
 # created by virtualenv automatically
 env/*
 .vscode/*
-*.db
 .idea/*
 
 # C extensions
